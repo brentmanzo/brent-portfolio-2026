@@ -1,30 +1,38 @@
 {
   "profile": {
     "name": "Brent Manzo",
-    "tagline": "Software Engineer & Web Developer",
-    "bio": "I build useful digital experiences with an eye for clarity, detail, and the systems behind the interface."
+    "tagline": "Software Engineer",
+    "bio": "I build useful digital experiences with an eye for clarity, detail, and the systems behind the interface.",
+    "portraitImage": "/images/brent-profile-bw.JPG",
+    "portraitAlt": "Self image of Brent Manzo, a software engineer"
   },
   "projects": [
     {
       "id": "project-one",
-      "name": "SAMPLE — Replace Before Publishing: Project One",
-      "description": "Replace this sample with a short description of a real project and the problem it solves.",
-      "githubUrl": "https://github.com/your-handle/project-one",
-      "liveUrl": "https://project-one.example.com"
+      "name": "Forbidden Fruit - Film Site",
+      "description": "A web application for showcasing a film project, featuring a modern design and seamless user experience.",
+      "githubUrl": "https://github.com/brentmanzo/forbidden-fruit-next",
+      "liveUrl": "https://forbidden-fruit-film.netlify.app/",
+      "previewImage": "/images/projects/forbidden-fruit.png",
+      "previewAlt": "Preview of the Forbidden Fruit film website"
     },
     {
       "id": "project-two",
-      "name": "SAMPLE — Replace Before Publishing: Project Two",
-      "description": "Replace this sample with a short description of a real project and the problem it solves.",
+      "name": "321 Webstore - Shopify Storefront",
+      "description": "Shopify storefront for a small business, featuring a custom theme and integrated payment processing.",
       "githubUrl": "",
-      "liveUrl": "https://project-two.example.com"
+      "liveUrl": "https://321dietrying.com/",
+      "previewImage": "/images/projects/321-webstore.png",
+      "previewAlt": "Preview of the 321 Webstore"
     },
     {
       "id": "project-three",
-      "name": "SAMPLE — Replace Before Publishing: Project Three",
-      "description": "Replace this sample with a short description of a real project and the problem it solves.",
-      "githubUrl": "https://github.com/your-handle/project-three",
-      "liveUrl": "https://project-three.example.com"
+      "name": "Art By Minaenae - Studio Portfolio",
+      "description": "A responsive portfolio website for an artist, showcasing their work and providing a platform for potential clients to view and contact them.",
+      "githubUrl": "https://github.com/brentmanzo/artbyminaenae",
+      "liveUrl": "https://artbyminaenae.com",
+      "previewImage": "/images/projects/abm.png",
+      "previewAlt": "Preview of the Art By Minaenae portfolio website"
     }
   ],
   "experience": [
@@ -32,10 +40,10 @@
       "id": "optum-ph-uhg",
       "employer": "Optum Global Solutions",
       "title": "Software Engineer",
-      "location": "Remote",
+      "location": "Remote, USA",
       "startDate": "2025-04",
       "endDate": null,
-      "description": "--"
+      "description": "Manages feature release and roll-out for a web-based healthcare application. Implements new features, fixes bugs, and maintains the codebase using React, TypeScript, and Node.js."
     },
     {
       "id": "sycip-gorres-velayo",
@@ -44,7 +52,7 @@
       "location": "Makati City, Philippines",
       "startDate": "2023-03",
       "endDate": "2025-04",
-      "description": "Builds responsive web and mobile applications; develops, manages, and supports internal applications and databases; and unit tests software changes."
+      "description": "Built various responsive web applications for clients. Developed internal applications and databases; and unit tested software changes."
     },
     {
       "id": "oracle-application-engineer",
@@ -62,7 +70,7 @@
       "location": "Pasay City, Philippines",
       "startDate": "2022-01",
       "endDate": "2022-06",
-      "description": "Built screens for a web-based loyalty application, refined front-end pages from wireframes with validation, and contributed to pre-production quality assessment."
+      "description": "Built screens for a web-based loyalty application with Outsystems, refined front-end pages from wireframes with validation, and contributed to pre-production quality assessment."
     }
   ],
   "certifications": [

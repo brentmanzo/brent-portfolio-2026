@@ -14,7 +14,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
           <h2 id="projects-title">
             Projects<span aria-hidden="true">.</span>
           </h2>
-          <p>A few things I have built and explored.</p>
+          <p>A few things I have built and shipped for client projects.</p>
         </div>
         <div className="project-grid">
           {projects.map((project, index) => (

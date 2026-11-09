@@ -50,11 +50,17 @@ export default function ContactForm({ ownerEmail }: { ownerEmail: string }) {
   }
 
   return (
-    <section className="content-section contact-section" id="contact" aria-labelledby="contact-title">
+    <section
+      className="content-section contact-section"
+      id="contact"
+      aria-labelledby="contact-title"
+    >
       <div className="section-inner contact-layout">
         <div className="section-heading">
-          <p className="eyebrow">Have a good one in mind?</p>
-          <h2 id="contact-title">Let&apos;s talk<span aria-hidden="true">.</span></h2>
+          <p className="eyebrow">Have an idea in mind?</p>
+          <h2 id="contact-title">
+            Let&apos;s connect<span aria-hidden="true">.</span>
+          </h2>
           <p>Share a little about what you are working on.</p>
           <a className="direct-email" href={`mailto:${ownerEmail}`}>
             {ownerEmail} <span aria-hidden="true">↗</span>
@@ -76,9 +82,15 @@ export default function ContactForm({ ownerEmail }: { ownerEmail: string }) {
                 type="text"
                 required
                 aria-invalid={Boolean(errors.name)}
-                aria-describedby={errors.name ? "contact-name-error" : undefined}
+                aria-describedby={
+                  errors.name ? "contact-name-error" : undefined
+                }
               />
-              {errors.name && <p className="field-error" id="contact-name-error">{errors.name}</p>}
+              {errors.name && (
+                <p className="field-error" id="contact-name-error">
+                  {errors.name}
+                </p>
+              )}
             </div>
             <div className="form-field">
               <label htmlFor="contact-email">Email</label>
@@ -89,9 +101,15 @@ export default function ContactForm({ ownerEmail }: { ownerEmail: string }) {
                 type="email"
                 required
                 aria-invalid={Boolean(errors.email)}
-                aria-describedby={errors.email ? "contact-email-error" : undefined}
+                aria-describedby={
+                  errors.email ? "contact-email-error" : undefined
+                }
               />
-              {errors.email && <p className="field-error" id="contact-email-error">{errors.email}</p>}
+              {errors.email && (
+                <p className="field-error" id="contact-email-error">
+                  {errors.email}
+                </p>
+              )}
             </div>
             <div className="form-field">
               <label htmlFor="contact-message">Message</label>
@@ -101,15 +119,21 @@ export default function ContactForm({ ownerEmail }: { ownerEmail: string }) {
                 rows={5}
                 required
                 aria-invalid={Boolean(errors.message)}
-                aria-describedby={errors.message ? "contact-message-error" : undefined}
+                aria-describedby={
+                  errors.message ? "contact-message-error" : undefined
+                }
               />
-              {errors.message && <p className="field-error" id="contact-message-error">{errors.message}</p>}
+              {errors.message && (
+                <p className="field-error" id="contact-message-error">
+                  {errors.message}
+                </p>
+              )}
             </div>
             <button className="submit-button" type="submit">
-              Prepare email <span aria-hidden="true">↗</span>
+              Send <span aria-hidden="true">↗</span>
             </button>
             <p className="form-note">
-              Your email app will open to finish sending; this page cannot confirm delivery.
+              This will open your email app to deliver your message/inquiry.
             </p>
           </form>
         </div>
