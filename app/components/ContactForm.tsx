@@ -41,12 +41,14 @@ export default function ContactForm({ ownerEmail }: { ownerEmail: string }) {
       return;
     }
 
-    const query = new URLSearchParams({
-      subject: `Portfolio inquiry from ${name}`,
-      body: `Name: ${name}\nEmail: ${email}\n\n${message}`,
-    });
+    const subject = encodeURIComponent(
+      `Website Portfolio Inquiry from ${name}`,
+    );
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\n${message}`,
+    );
 
-    window.location.href = `mailto:${encodeURIComponent(ownerEmail)}?${query.toString()}`;
+    window.location.href = `mailto:${ownerEmail}?subject=${subject}&body=${body}`;
   }
 
   return (
