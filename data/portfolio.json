@@ -1,0 +1,101 @@
+{
+  "profile": {
+    "name": "Brent Manzo",
+    "tagline": "Software Engineer & Web Developer",
+    "bio": "I build useful digital experiences with an eye for clarity, detail, and the systems behind the interface."
+  },
+  "projects": [
+    {
+      "id": "project-one",
+      "name": "SAMPLE — Replace Before Publishing: Project One",
+      "description": "Replace this sample with a short description of a real project and the problem it solves.",
+      "githubUrl": "https://github.com/your-handle/project-one",
+      "liveUrl": "https://project-one.example.com"
+    },
+    {
+      "id": "project-two",
+      "name": "SAMPLE — Replace Before Publishing: Project Two",
+      "description": "Replace this sample with a short description of a real project and the problem it solves.",
+      "githubUrl": "",
+      "liveUrl": "https://project-two.example.com"
+    },
+    {
+      "id": "project-three",
+      "name": "SAMPLE — Replace Before Publishing: Project Three",
+      "description": "Replace this sample with a short description of a real project and the problem it solves.",
+      "githubUrl": "https://github.com/your-handle/project-three",
+      "liveUrl": "https://project-three.example.com"
+    }
+  ],
+  "experience": [
+    {
+      "id": "optum-ph-uhg",
+      "employer": "Optum Global Solutions",
+      "title": "Software Engineer",
+      "location": "Remote",
+      "startDate": "2025-04",
+      "endDate": null,
+      "description": "--"
+    },
+    {
+      "id": "sycip-gorres-velayo",
+      "employer": "SyCip, Gorres, Velayo & Co.",
+      "title": "Full-stack Developer",
+      "location": "Makati City, Philippines",
+      "startDate": "2023-03",
+      "endDate": "2025-04",
+      "description": "Builds responsive web and mobile applications; develops, manages, and supports internal applications and databases; and unit tests software changes."
+    },
+    {
+      "id": "oracle-application-engineer",
+      "employer": "Oracle Corporation",
+      "title": "Application Engineer",
+      "location": "Makati City, Philippines",
+      "startDate": "2022-06",
+      "endDate": "2023-03",
+      "description": "Enhanced code using Java ADF, implemented procurement and purchasing product features, and investigated customer bugs and code corrections."
+    },
+    {
+      "id": "digital-advantage-intern",
+      "employer": "Digital Advantage Corporation",
+      "title": "Application Developer Intern",
+      "location": "Pasay City, Philippines",
+      "startDate": "2022-01",
+      "endDate": "2022-06",
+      "description": "Built screens for a web-based loyalty application, refined front-end pages from wireframes with validation, and contributed to pre-production quality assessment."
+    }
+  ],
+  "certifications": [
+    {
+      "id": "ai-dojo",
+      "name": "AI Dojo: Generative AI",
+      "issuer": "Optum.ai",
+      "date": "2026-08",
+      "credentialUrl": "https://lnkd.in/p/gqdYZWcm"
+    },
+    {
+      "id": "professional-scrum-master-i",
+      "name": "Professional Scrum Master I (PSM I)",
+      "issuer": "Scrum.org",
+      "date": "2022-07",
+      "credentialUrl": "https://www.credly.com/badges/1e295209-f6d2-44c5-adb5-9b08e733f284"
+    },
+    {
+      "id": "azure-fundamentals",
+      "name": "Microsoft Certified: Azure Fundamentals",
+      "issuer": "Microsoft",
+      "date": "2022-03",
+      "credentialUrl": "https://www.credly.com/badges/bbb3a567-4781-4b1e-866f-a43866bfd3bf"
+    },
+    {
+      "id": "aws-academy-cloud-foundations",
+      "name": "AWS Academy Graduate - Cloud Foundations",
+      "issuer": "Amazon Web Services Training and Certification",
+      "date": "2021-03",
+      "credentialUrl": "https://www.credly.com/badges/26679dbb-45a7-435d-b5f8-1d5a44eadc12"
+    }
+  ],
+  "contact": {
+    "email": "millen.brent@gmail.com"
+  }
+}

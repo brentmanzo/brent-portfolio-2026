@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Brent Manzo - Portfolio
 
-## Getting Started
+A single-page, dark-first portfolio built with Next.js and exported as static files.
 
-First, run the development server:
+## Run locally
 
-```bash
+```powershell
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Edit portfolio content
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Update [`data/portfolio.json`](./data/portfolio.json) to change the profile, projects,
+experience, certifications, and contact email. The JSON is validated at build time; an
+invalid or incomplete record stops the build with a field-specific error.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The three project entries and `you@example.com` contact address currently contain sample values.
+Replace them with real project details, GitHub/live destinations, and the address you intend to
+publish before deploying. The resume-based experience and certification entries should be checked
+for accuracy; in particular, confirm that the latest role is still current. Certification links
+are `example.com` placeholders and must be replaced with real destinations before publication.
 
-## Learn More
+## Replace project previews and portrait
 
-To learn more about Next.js, take a look at the following resources:
+Project preview images can be added under `public/images/projects/`. Set each project's
+`previewImage` to its root-relative path (for example, `/images/projects/project-one.webp`) and
+provide a descriptive `previewAlt`. The preview opens the matching live-project link. If no image
+is supplied or the image cannot load, a neutral linked placeholder appears and the project's text
+and direct links remain available.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To add a portrait, place your image under `public/images/portrait/` and set `portraitImage` and
+`portraitAlt` in the profile. The Hero displays it in a square frame; without an image, it shows
+a neutral placeholder. To hide the portrait component without changing the rest of the Hero,
+comment out the `Portrait` import and `<Portrait profile={profile} />` invocation in
+`app/components/Hero.tsx`. Do not use an image you do not have permission to publish.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Validate and build for static hosting
 
-## Deploy on Vercel
+```powershell
+npm run lint
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The build produces the static site in `out/`. Deploy the contents of that directory to a static
+host; no Next.js server, database, or API is required. After editing the JSON, rebuild to include
+the updated content.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The contact form validates in the browser and opens the visitor's email application with a
+pre-filled message. It does not send or confirm delivery; the configured email address remains
+available as a direct alternative.
