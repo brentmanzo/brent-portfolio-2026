@@ -6,7 +6,7 @@
 
 **Status**: Draft
 
-**Input**: User description: "Create a single-page personal portfolio for a software engineer with a hero (bio and tagline), exactly three project cards with optional GitHub and live links, an experience timeline, certifications, and a contact form. Keep it statically deployable and make content editable through a JSON file. Adapt the supplied Kive reference's confident minimalist mood, near-black/off-white/gray palette, restrained electric-yellow accent, large lightweight display typography, and quiet centered hero. Use original identity and content, not Kive branding, copy, imagery, or product evidence. Treat the dated 2026-09-08 reference as a single viewport and do not infer unseen sections."
+**Input**: User description: "Create a single-page personal portfolio for a software engineer with a hero (bio and tagline), exactly three project cards with a required live-project link and optional GitHub link, an experience timeline, certifications, and a contact form. Keep it statically deployable and make content editable through a JSON file. Adapt the supplied Kive reference's confident minimalist mood, near-black/off-white/gray palette, restrained electric-yellow accent, large lightweight display typography, and quiet centered hero. Use original identity and content, not Kive branding, copy, imagery, or product evidence. Treat the dated 2026-09-08 reference as a single viewport and do not infer unseen sections."
 
 ## Clarifications
 
@@ -107,9 +107,13 @@ addressed to the owner and contains the visitor's name, email, and message.
    email draft.
 2. **Given** a visitor enters a valid name, email address, and message, **When** they submit the
    form, **Then** the browser opens the visitor's email handler with the configured owner address
-   and entered details included.
+   and entered details included. The subject reads "Website Portfolio Inquiry from [sender name]";
+   the body presents the sender's name and email on separate lines before the message.
 3. **Given** the visitor views the Contact section, **Then** the owner's direct email address is
    available whether or not an email handler is configured.
+4. **Given** a sender's name contains spaces and the message contains line breaks, **When** the
+   valid form is submitted, **Then** the opened email displays the subject and body with the spaces
+   and line breaks intact.
 
 ---
 
@@ -234,7 +238,7 @@ static-only hosting, then verify the updated content appears on the page.
 ## Additional Features
 
 These additions extend the portfolio requirements above. The experience and certification
-content is based on the [resume supplied by the owner](https://brentmanzo.com/static/media/Brent%20Millen%20Manzo%20-%20Resume%202024.0dbf658afa3862fb2d8e.pdf).
+content has been updated by the owner beyond the [2024 resume supplied as an earlier source](https://brentmanzo.com/static/media/Brent%20Millen%20Manzo%20-%20Resume%202024.0dbf658afa3862fb2d8e.pdf).
 
 ### User Story 6 - Preview Featured Projects (Priority: P1)
 
@@ -257,16 +261,18 @@ activating each preview opens that card's live-project destination.
 4. **Given** a visitor uses a keyboard or assistive technology, **When** they reach a preview,
    **Then** its live-project action has an accessible name identifying the project and can be
    activated without a pointer.
+5. **Given** a project preview is displayed, **When** it is not hovered, **Then** it appears in
+   black and white; when the visitor hovers over it, **Then** it returns to color.
 
-### User Story 7 - Review Resume-Based Career and Credentials (Priority: P2)
+### User Story 7 - Review Career and Credentials (Priority: P2)
 
-A visitor reviews the owner's resume-based work history and certifications, including links to
+A visitor reviews the owner's current work history and certifications, including links to
 credential destinations.
 
 **Why this priority**: Accurate career and certification details give visitors context for the
 owner's skills and qualifications.
 
-**Independent Test**: Verify every supplied resume role appears as a dated timeline entry in
+**Independent Test**: Verify every supplied role appears as a dated timeline entry in
 newest-first order and every supplied certification shows its identifying details and any
 placeholder destination.
 
@@ -279,37 +285,41 @@ placeholder destination.
    supplied certification is shown with its issuer, date, and a clearly identified credential
    link when one is supplied; the list is not required to contain four or more certifications.
 3. **Given** a role's dates overlap another role, **When** the timeline is displayed, **Then**
-   each role retains its own resume dates and the entries remain ordered by most recent start
+   each role retains its own supplied dates and the entries remain ordered by most recent start
    date.
-4. **Given** a visitor activates a placeholder credential link, **When** its destination opens,
-   **Then** the portfolio does not represent the placeholder as a verified credential record.
+4. **Given** a certification has a real credential destination, **When** it is displayed,
+   **Then** its destination is available through an accessible credential link.
+5. **Given** a certification has a placeholder destination, **When** it is displayed, **Then**
+   the link is clearly identified as a placeholder and is not represented as a verified
+   credential.
 
-**Initial resume-based experience records** (starting content; owners may remove or add records):
+**Current experience records** (owners may update, remove, or add records):
 
-1. **SyCip, Gorres, Velayo & Co.** — Full-stack Developer, Makati City, Philippines,
-   Mar 2023–Present. Builds responsive web and mobile applications, manages and supports internal
-   applications and databases, and unit tests software changes.
-2. **Oracle Corporation** — Application Engineer, Makati City, Philippines, Jun 2022–Mar 2023.
+1. **Optum Global Solutions** — Software Engineer, Remote, USA, Apr 2025–Present. Manages feature
+   release and roll-out for a web-based healthcare application; implements features, fixes bugs,
+   and maintains the codebase using React, TypeScript, and Node.js.
+2. **SyCip, Gorres, Velayo & Co.** — Full-stack Developer, Makati City, Philippines,
+   Mar 2023–Apr 2025. Built responsive web applications for clients, developed internal
+   applications and databases, and unit tested software changes.
+3. **Oracle Corporation** — Application Engineer, Makati City, Philippines, Jun 2022–Mar 2023.
    Enhanced code using Java ADF, implemented procurement and purchasing product features, and
    investigated customer bugs and corrections.
-3. **Digital Advantage Corporation** — Application Developer Intern, Pasay City, Philippines,
-   Jan 2022–Jun 2022. Built screens for a web-based loyalty application, refined front-end pages
-   from wireframes with validation, and contributed to pre-production quality assessment.
-4. **Freelance** — Front-end Developer, Taguig City, Philippines, Jan 2021–Mar 2022. Developed
-   and consulted on web applications, managed and deployed custom systems including an online
-   ordering system, and created front-end pages for portfolio and token-generation projects.
+4. **Digital Advantage Corporation** — Application Developer Intern, Pasay City, Philippines,
+   Jan 2022–Jun 2022. Built screens for a web-based loyalty application with OutSystems, refined
+   front-end pages from wireframes with validation, and contributed to pre-production quality
+   assessment.
 
-**Initial resume-based certification records** (starting content; owners may remove or add
-records):
+**Current certification records** (owners may update, remove, or add records):
 
-1. React Front To Back 2022 (React.js) — Udemy, Jan 2023.
-   Placeholder: `https://example.com/certifications/react-front-to-back-2022`.
+1. AI Dojo: Generative AI — Optum.ai, Aug 2026.
+   Credential: `https://lnkd.in/p/gqdYZWcm`.
 2. Professional Scrum Master I (PSM I) — Scrum.org, Jul 2022.
-   Placeholder: `https://example.com/certifications/professional-scrum-master-i`.
+   Credential: `https://www.credly.com/badges/1e295209-f6d2-44c5-adb5-9b08e733f284`.
 3. Microsoft Certified: Azure Fundamentals — Microsoft, Mar 2022.
-   Placeholder: `https://example.com/certifications/azure-fundamentals`.
+   Credential: `https://www.credly.com/badges/bbb3a567-4781-4b1e-866f-a43866bfd3bf`.
 4. AWS Academy Graduate - Cloud Foundations — Amazon Web Services Training and Certification,
-   Mar 2021. Placeholder: `https://example.com/certifications/aws-academy-cloud-foundations`.
+   Mar 2021.
+   Credential: `https://www.credly.com/badges/26679dbb-45a7-435d-b5f8-1d5a44eadc12`.
 
 ### User Story 8 - Personalize the Hero Portrait (Priority: P2)
 
@@ -324,10 +334,10 @@ an owner-supplied portrait and hidden while the name, tagline, and biography rem
 
 **Acceptance Scenarios**:
 
-1. **Given** the owner has not supplied a portrait, **When** the Hero is displayed, **Then** it
+1. **Given** the owner has supplied a portrait, **When** the Hero is displayed, **Then** it
+   appears in a square image area with appropriate text alternative.
+2. **Given** the owner has not supplied a portrait, **When** the Hero is displayed, **Then** it
    uses a neutral placeholder rather than fabricated personal imagery.
-2. **Given** the owner supplies a portrait, **When** the Hero is displayed, **Then** it appears
-   in a square image area with appropriate text alternative.
 3. **Given** the owner chooses not to show the portrait, **When** the portrait display is
    disabled, **Then** the name, tagline, biography, and remaining Hero layout remain usable.
 
@@ -350,6 +360,11 @@ an owner-supplied portrait and hidden while the name, tagline, and biography rem
   with a supplied image and hide by commenting out its dedicated display component, without
   removing or hiding the other Hero content. A supplied image MUST have an appropriate text
   alternative; no personal portrait may be fabricated.
+- **FR-018**: Project previews MUST appear in black and white by default and return to color when
+  hovered.
+- **FR-019**: A contact email prepared by the form MUST use a subject identifying a website
+  portfolio inquiry and the sender's name. Its body MUST show the sender's name and email on
+  separate lines before the message, with readable spaces and line breaks in the email handler.
 
 ### Additional Success Criteria
 
@@ -361,16 +376,20 @@ an owner-supplied portrait and hidden while the name, tagline, and biography rem
   identified link when one is supplied; the owner can maintain fewer than four certifications.
 - **SC-012**: The Hero portrait area is square when shown, can be replaced or hidden independently,
   and hiding it leaves all required Hero text available.
+- **SC-013**: Each project preview is black and white before hover and displays its original color
+  while hovered.
+- **SC-014**: A valid contact submission opens an email draft with subject
+  "Website Portfolio Inquiry from [sender name]" and body lines for `Name: [sender name]` and
+  `Email: [sender email]`, followed by a blank line and the message.
 
 ### Additional Assumptions
 
-- The supplied 2024 resume is the source for the role and certification details above. In
-  particular, the latest role's “Present” date is reproduced as written in that resume and must
-  be confirmed by the owner before publication.
-- Credential links use reserved `example.com` placeholder destinations and are not evidence that
-  credentials have been independently verified. The owner replaces them with valid destinations
-  before publication.
-- The owner supplies suitable project preview images. Until supplied, a non-project-specific
-  neutral placeholder may be used; fabricated project imagery or evidence is not used.
-- The Hero portrait is not supplied yet; a neutral placeholder is used until the owner provides
-  an image.
+- Experience and certification details above reflect the owner's currently supplied portfolio
+  content, which has been updated beyond the 2024 resume. The owner remains responsible for
+  confirming dates and details before publication.
+- Credential links shown above are owner-supplied destinations. A destination using the reserved
+  `example.com` domain is a placeholder and is not evidence that a credential has been verified;
+  other destinations are shown as credential links without independently asserting verification.
+- The owner has supplied project preview images and a Hero portrait for the current content.
+  Neutral fallbacks remain available when images are omitted or fail to load; fabricated project
+  imagery or personal imagery is not used.
